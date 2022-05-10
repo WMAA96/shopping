@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(75, 80, 82);
+  color: white;
+}
+
+.navLinks {
+  width: 50%;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+/* This may confuse me later..... 
+*/
+
+li {
+  color: white;
+}
