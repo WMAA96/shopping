@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function Navbar() {
+function Navbar(props) {
+  const { cart } = props;
+
   return (
     <nav>
       <h3>Logo</h3>
@@ -11,6 +13,7 @@ function Navbar() {
         <Link to="/Shop">
           <li>Shop</li>
         </Link>
+        <li>Checkout: {cart.length} </li>
       </ul>
     </nav>
   );
