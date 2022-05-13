@@ -5,21 +5,21 @@ function Shop(props) {
   const [products, setProducts] = useState([
     {
       id: 1,
-      price: 50,
+      price: 15,
       band: "blink182",
       album: "Untitled",
       quantity: 1,
     },
     {
       id: 2,
-      price: 50,
+      price: 10,
       band: "yellowcard",
       album: "ocean avenue",
       quantity: 1,
     },
     {
       id: 3,
-      price: 50,
+      price: 20,
       band: "Green day",
       album: "Dookie",
       quantity: 1,

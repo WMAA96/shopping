@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar cartQuantity={cartQuantity} />
+        <Navbar cartQuantity={cartQuantity} cart={cart} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route

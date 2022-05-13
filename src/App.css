@@ -13,6 +13,7 @@ nav {
   min-height: 10vh;
   background: rgb(75, 80, 82);
   color: white;
+  overflow: hidden;
 }
 
 .navLinks {
@@ -27,7 +28,9 @@ nav {
 */
 
 li {
+  justify-content: center;
   color: white;
+  list-style: none;
 }
 
 .product {
@@ -39,4 +42,15 @@ li {
 
 .card {
   border: solid purple 1px;
+}
+
+.dropdwn {
+}
+
+.dropdwn-content {
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #008190;
+  min-width: 200px;
+  text-align: left;
 }

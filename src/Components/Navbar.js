@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import Checkout from "./Checkout";
 function Navbar(props) {
-  const { cart } = props;
+  const { cart, cartQuantity } = props;
+
+  const [list, setList] = useState(false);
 
   return (
     <nav>
@@ -13,7 +16,12 @@ function Navbar(props) {
         <Link to="/Shop">
           <li>Shop</li>
         </Link>
-        <li>Checkout: {cart.length} </li>
+        <li
+          onMouseEnter={() => setList(true)}
+          onMouseLeave={() => setList(false)}
+        >
+          <Checkout cartQuantity={cartQuantity()} list={list} cart={cart} />{" "}
+        </li>
       </ul>
     </nav>
   );
