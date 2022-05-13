@@ -52,5 +52,6 @@ li {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   background-color: #008190;
   min-width: 200px;
+  min-height: 200px;
   text-align: left;
 }

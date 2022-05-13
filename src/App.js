@@ -8,9 +8,7 @@ import "./App.css";
 function App() {
   const [cart, setCart] = useState([]);
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+  useEffect(() => {}, [cart]);
 
   const addtoCart = adding => {
     cart.includes(adding)
@@ -24,8 +22,8 @@ function App() {
 
   const changeQuantity = adding => {
     let newCart = [...cart];
-    // wont work but how i left it lol
-    newCart[adding.id - 1].quantity++;
+    const currentProduct = newCart.find(cart => cart.id === adding.id);
+    currentProduct.quantity++;
 
     setCart(newCart);
   };
