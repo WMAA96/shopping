@@ -24,14 +24,22 @@ function App() {
     let newCart = [...cart];
     const currentProduct = newCart.find(cart => cart.id === adding.id);
     currentProduct.quantity++;
+    setCart(newCart);
+  };
 
+  const removeFromBasket = (removeID, e) => {
+    const newCart = cart.filter(cart => cart.id !== removeID.id);
     setCart(newCart);
   };
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar cartQuantity={cartQuantity} cart={cart} />
+        <Navbar
+          cartQuantity={cartQuantity}
+          cart={cart}
+          removeFromBasket={removeFromBasket}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route

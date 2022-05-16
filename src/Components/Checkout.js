@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 function Checkout(props) {
-  const { cart, cartQuantity, list } = props;
+  const { cart, cartQuantity, list, removeFromBasket } = props;
 
   if (!list) {
     return <p>Checkout: {cartQuantity}</p>;
@@ -24,7 +24,8 @@ function Checkout(props) {
             {cart.map(({ id, album, quantity, price, band }) => (
               <li key={id}>
                 <h3>{band} </h3>
-                {album} {quantity} £{quantity * price}
+                {album} {quantity} £{quantity * price}{" "}
+                <button onClick={e => removeFromBasket({ id }, e)}>X</button>
               </li>
             ))}
           </ul>

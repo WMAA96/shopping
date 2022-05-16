@@ -6,6 +6,14 @@ body {
   text-align: center;
 }
 
+.home {
+  height: 90vh;
+  color: #008190;
+  background-position-x: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
