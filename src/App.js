@@ -28,8 +28,13 @@ function App() {
   };
 
   const removeFromBasket = (removeID, e) => {
+    let currentProduct = cart.find(cart => cart.id === removeID.id);
+    currentProduct.quantity = 1;
+
     const newCart = cart.filter(cart => cart.id !== removeID.id);
+
     setCart(newCart);
+    console.log(newCart);
   };
 
   return (
