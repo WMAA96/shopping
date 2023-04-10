@@ -40,15 +40,18 @@ li {
   list-style: none;
 }
 
+.quantityLabel {
+  border: solid black 2px;
+}
+
 .product {
   margin: 40px;
   display: grid;
   grid-template-columns: auto auto auto;
-  border: solid black 2px;
 }
 
 .card {
-  border: solid purple 1px;
+  border: solid purple 111px;
 }
 
 .dropdwn {
