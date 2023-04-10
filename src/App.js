@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Shop from "./Components/Shop";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [cart, setCart] = useState([]);

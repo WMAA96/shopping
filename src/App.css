@@ -29,7 +29,6 @@ nav {
   justify-content: space-around;
   display: flex;
   align-items: center;
-  list-style: none;
 }
 
 /* This may confuse me later..... 
@@ -53,6 +52,7 @@ li {
 }
 
 .dropdwn {
+  padding: 0px;
 }
 
 .dropdwn-content {
@@ -62,4 +62,5 @@ li {
   min-width: 200px;
   min-height: 200px;
   text-align: left;
+  z-index: 1;
 }

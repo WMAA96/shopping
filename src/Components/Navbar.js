@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Checkout from "./Checkout";
-function Navbar(props) {
+
+function Nbar(props) {
   const { cart, cartQuantity, removeFromBasket } = props;
 
   const [list, setList] = useState(false);
@@ -25,11 +26,11 @@ function Navbar(props) {
             list={list}
             cart={cart}
             removeFromBasket={removeFromBasket}
-          />{" "}
+          />
         </li>
       </ul>
     </nav>
   );
 }
 
-export default Navbar;
+export default Nbar;

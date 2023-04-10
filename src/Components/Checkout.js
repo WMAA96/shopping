@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Checkout(props) {
   const { cart, cartQuantity, list, removeFromBasket } = props;
 
   if (!list) {
-    return <p>Checkout: {cartQuantity}</p>;
+    return <Link to="/">Checkout: {cartQuantity}</Link>;
   } else if (cart.length === 0) {
     return (
       <div className="dropdwn">
