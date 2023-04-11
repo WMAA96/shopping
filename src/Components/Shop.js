@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import Card from "./Card";
+import Card from "./Productcard";
+import Productcard from "./Productcard";
 function Shop(props) {
   const { addtoCart } = props;
   const [products, setProducts] = useState([
@@ -24,6 +25,13 @@ function Shop(props) {
       album: "Dookie",
       quantity: 1,
     },
+    {
+      id: 4,
+      price: 20,
+      band: "Green day",
+      album: "Dookie",
+      quantity: 1,
+    },
   ]);
 
   const addProduct = (id, e) => {
@@ -33,8 +41,14 @@ function Shop(props) {
   };
 
   return (
-    <div>
-      <Card products={products} addProduct={addProduct} />
+    <div className="product">
+      {products.map(product => (
+        <Productcard
+          key={product.id}
+          product={product}
+          addProduct={addProduct}
+        />
+      ))}
     </div>
   );
 }
