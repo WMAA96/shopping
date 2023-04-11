@@ -40,7 +40,7 @@ function Productcard(props) {
           />
           <Button onClick={decrement}>-</Button>
         </div>
-        <Button variant="dark" onClick={e => addProduct(product.id, e)}>
+        <Button variant="dark" onClick={e => addProduct(product.id, e, value)}>
           {" "}
           Add to cart
         </Button>

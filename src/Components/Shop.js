@@ -34,10 +34,10 @@ function Shop(props) {
     },
   ]);
 
-  const addProduct = (id, e) => {
+  const addProduct = (id, e, quantity) => {
     const currentProduct = products.find(products => products.id === id);
 
-    addtoCart(currentProduct);
+    addtoCart(currentProduct, quantity);
   };
 
   return (

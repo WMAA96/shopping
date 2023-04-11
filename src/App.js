@@ -11,20 +11,25 @@ function App() {
 
   useEffect(() => {}, [cart]);
 
-  const addtoCart = adding => {
-    cart.includes(adding)
-      ? changeQuantity(adding)
-      : setCart(oldArray => [...oldArray, adding]);
+  const addtoCart = (adding, quantity) => {
+    console.log(adding);
+
+    if (cart.includes(adding)) {
+      changeBasketQuantity(adding, quantity);
+    } else {
+      adding.quantity = quantity;
+      setCart(oldArray => [...oldArray, adding]);
+    }
   };
 
   const cartQuantity = () => {
     return cart.reduce((total, cart) => cart.quantity + total, 0);
   };
 
-  const changeQuantity = adding => {
+  const changeBasketQuantity = (adding, quantity) => {
     let newCart = [...cart];
     const currentProduct = newCart.find(cart => cart.id === adding.id);
-    currentProduct.quantity++;
+    currentProduct.quantity = currentProduct.quantity + quantity;
     setCart(newCart);
   };
 
