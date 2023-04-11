@@ -5,11 +5,21 @@ import Card from "react-bootstrap/Card";
 function Productcard(props) {
   const { product, addProduct } = props;
 
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
   const handleChange = e => {
     const value = Math.max(1, Math.min(99, Number(e.target.value)));
     setValue(value);
+  };
+
+  const increment = e => {
+    // change console log to CSS change on input
+    value >= 99 ? console.log("nope") : setValue(value + 1);
+  };
+
+  const decrement = e => {
+    // change console log to CSS change on input
+    value <= 1 ? console.log("nope") : setValue(value - 1);
   };
 
   return (
@@ -19,7 +29,7 @@ function Productcard(props) {
         <Card.Title>{product.band}</Card.Title>
         <Card.Text> Price: £{product.price}</Card.Text>
         <div>
-          <Button>+</Button>
+          <Button onClick={increment}>+</Button>
           <input
             key={product.id}
             type="number"
@@ -28,7 +38,7 @@ function Productcard(props) {
             value={value}
             onChange={handleChange}
           />
-          <Button>-</Button>
+          <Button onClick={decrement}>-</Button>
         </div>
         <Button variant="dark" onClick={e => addProduct(product.id, e)}>
           {" "}
