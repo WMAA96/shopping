@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import Card from "./Productcard";
 import Productcard from "./Productcard";
+
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 function Shop(props) {
   const { addtoCart } = props;
   const [products, setProducts] = useState([
@@ -41,15 +46,20 @@ function Shop(props) {
   };
 
   return (
-    <div className="product">
-      {products.map(product => (
-        <Productcard
-          key={product.id}
-          product={product}
-          addProduct={addProduct}
-        />
-      ))}
-    </div>
+    <Container>
+      <Row>
+        <Col xs={3}>SDDD</Col>
+        <Col xs={9}>
+          <Row>
+            {products.map(product => (
+              <Col xs="4" key={product.id}>
+                <Productcard product={product} addProduct={addProduct} />
+              </Col>
+            ))}
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
