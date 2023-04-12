@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 function Productcard(props) {
   const { product, addProduct } = props;
@@ -26,7 +27,9 @@ function Productcard(props) {
     <Card border="primary">
       <div className="card">
         <Card.Img /*variant="top" src="holder.js/100px180"*/ />
-        <Card.Title>{product.band}</Card.Title>
+        <Link to={`/Shop/${product.id}`} state={product}>
+          <Card.Title>{product.band}</Card.Title>
+        </Link>
         <Card.Text> Price: £{product.price}</Card.Text>
         <div>
           <Button onClick={increment}>+</Button>

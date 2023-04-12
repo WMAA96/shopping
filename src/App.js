@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Shop from "./Components/Shop";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Item from "./Components/Item";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -45,7 +46,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Navbar
           cartQuantity={cartQuantity}
           cart={cart}
@@ -57,8 +58,9 @@ function App() {
             path="/Shop"
             element={<Shop cart={cart} addtoCart={addtoCart} />}
           />
+          <Route path="/Shop/:id" element={<Item />}></Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
