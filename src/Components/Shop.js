@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "./Productcard";
 import Productcard from "./Productcard";
+import Sidebar from "./Sidebar";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -8,6 +9,7 @@ import Col from "react-bootstrap/Col";
 
 function Shop(props) {
   const { addtoCart } = props;
+  const [priceRange, setPriceRange] = useState(100);
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -39,6 +41,16 @@ function Shop(props) {
     },
   ]);
 
+  const [filteredProducts, setFilteredProducts] = useState(products);
+
+  useEffect(() => {
+    const priceFiltered = products.filter(
+      products => products.price <= priceRange
+    );
+    console.log(priceRange);
+    setFilteredProducts(priceFiltered);
+  }, [priceRange]);
+
   const addProduct = (id, e, quantity) => {
     const currentProduct = products.find(products => products.id === id);
 
@@ -48,10 +60,12 @@ function Shop(props) {
   return (
     <Container>
       <Row>
-        <Col xs={3}>SDDD</Col>
+        <Col xs={3}>
+          <Sidebar priceRange={priceRange} setPriceRange={setPriceRange} />
+        </Col>
         <Col xs={9}>
           <Row>
-            {products.map(product => (
+            {filteredProducts.map(product => (
               <Col xs="4" key={product.id}>
                 <Productcard product={product} addProduct={addProduct} />
               </Col>
