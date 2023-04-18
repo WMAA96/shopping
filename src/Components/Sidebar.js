@@ -23,13 +23,15 @@ function Sidebar(props) {
     filterBands(selectedBands);
   }, [selectedBands]);
 
+  const handlePriceChange = e => {
+    setPriceRange(e.target.value);
+    filterBands(selectedBands);
+  };
+
   return (
     <div>
       <Form.Label>Filter by price</Form.Label>
-      <Form.Range
-        value={priceRange}
-        onChange={e => setPriceRange(e.target.value)}
-      />
+      <Form.Range value={priceRange} onChange={handlePriceChange} />
       <div>Current max price: £{priceRange}</div>
       <hr />
       <Form.Label className="fs-3 text-primary  float-left">Band</Form.Label>
