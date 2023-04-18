@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col";
 
 function Shop(props) {
   const { addtoCart } = props;
-  const [priceRange, setPriceRange] = useState(100);
+  const [priceRange, setPriceRange] = useState(50);
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -59,7 +59,15 @@ function Shop(props) {
   };
 
   const filterBands = selectedBands => {
-    console.log(selectedBands["blink182"]);
+    const bandFilter = products.filter(product => {
+      if (Object.values(selectedBands).every(value => !value)) {
+        return true; // Include all products in the filtered array if no band has been checked
+      } else if (selectedBands[product.band]) {
+        return true;
+      } else return false;
+    });
+
+    setFilteredProducts(bandFilter);
   };
 
   return (

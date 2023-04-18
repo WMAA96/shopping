@@ -13,13 +13,15 @@ function Sidebar(props) {
     }, {})
   );
   const handleCheckBox = (e, band) => {
-    console.log(selectedBands);
-    setSelectedBands({
-      ...selectedBands,
+    setSelectedBands(prevState => ({
+      ...prevState,
       [band]: e.target.checked,
-    });
-    filterBands(selectedBands);
+    }));
   };
+
+  useEffect(() => {
+    filterBands(selectedBands);
+  }, [selectedBands]);
 
   return (
     <div>
