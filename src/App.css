@@ -76,3 +76,8 @@ input::-webkit-inner-spin-button {
 .container {
   margin: 50px;
 }
+
+.label-style {
+  color: blue !important;
+  font-size: 16px;
+}

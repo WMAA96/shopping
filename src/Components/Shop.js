@@ -43,6 +43,7 @@ function Shop(props) {
 
   const [filteredProducts, setFilteredProducts] = useState(products);
 
+  // Filter product whenever price range changes
   useEffect(() => {
     const priceFiltered = products.filter(
       products => products.price <= priceRange
@@ -57,11 +58,20 @@ function Shop(props) {
     addtoCart(currentProduct, quantity);
   };
 
+  const filterBands = selectedBands => {
+    console.log(selectedBands["blink182"]);
+  };
+
   return (
     <Container>
       <Row>
         <Col xs={3}>
-          <Sidebar priceRange={priceRange} setPriceRange={setPriceRange} />
+          <Sidebar
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+            products={products}
+            filterBands={filterBands}
+          />
         </Col>
         <Col xs={9}>
           <Row>
