@@ -2,7 +2,14 @@ import Form from "react-bootstrap/Form";
 import React, { useEffect, useState } from "react";
 
 function Sidebar(props) {
-  const { priceRange, setPriceRange, products, filterBands } = props;
+  const {
+    priceRange,
+    setPriceRange,
+    products,
+
+    setFilteredProducts,
+    filteredProducts,
+  } = props;
 
   const uniqueBand = [...new Set(products.map(product => product.band))];
 
@@ -12,6 +19,24 @@ function Sidebar(props) {
       return checked;
     }, {})
   );
+  // Applies price and band filter -- can seperate into 2 different useEffects later!                              @@@@@@@@@@@@@@@@@@@
+  useEffect(() => {
+    const bandFilter = products.filter(product => {
+      if (Object.values(selectedBands).every(value => !value)) {
+        return true; // Include all products in the filtered array if no band has been checked
+      } else if (selectedBands[product.band]) {
+        return true;
+      } else return false;
+    });
+
+    const priceAndBandFilter = bandFilter.filter(
+      products => products.price <= priceRange
+    );
+    console.log(priceRange);
+
+    setFilteredProducts(priceAndBandFilter);
+  }, [selectedBands, priceRange]);
+
   const handleCheckBox = (e, band) => {
     setSelectedBands(prevState => ({
       ...prevState,
@@ -19,13 +44,8 @@ function Sidebar(props) {
     }));
   };
 
-  useEffect(() => {
-    filterBands(selectedBands);
-  }, [selectedBands]);
-
   const handlePriceChange = e => {
     setPriceRange(e.target.value);
-    filterBands(selectedBands);
   };
 
   return (

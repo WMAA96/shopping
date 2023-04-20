@@ -43,35 +43,10 @@ function Shop(props) {
 
   const [filteredProducts, setFilteredProducts] = useState(products);
 
-  // Filter product whenever price range changes -------> PREVIOUS IMPLEMENTATION delete when ready:  notes for next time: Need this since state is async e.g put max price to 19 then 20 green day wont show up
-  useEffect(() => {
-    const priceFiltered = products.filter(
-      products => products.price <= priceRange
-    );
-    console.log(priceRange);
-    setFilteredProducts(priceFiltered);
-  }, [priceRange]);
-
   const addProduct = (id, e, quantity) => {
     const currentProduct = products.find(products => products.id === id);
 
     addtoCart(currentProduct, quantity);
-  };
-
-  const filterBands = selectedBands => {
-    const bandFilter = products.filter(product => {
-      if (Object.values(selectedBands).every(value => !value)) {
-        return true; // Include all products in the filtered array if no band has been checked
-      } else if (selectedBands[product.band]) {
-        return true;
-      } else return false;
-    });
-
-    const priceAndBandFilter = bandFilter.filter(
-      products => products.price <= priceRange
-    );
-
-    setFilteredProducts(priceAndBandFilter);
   };
 
   return (
@@ -82,7 +57,8 @@ function Shop(props) {
             priceRange={priceRange}
             setPriceRange={setPriceRange}
             products={products}
-            filterBands={filterBands}
+            filteredProducts={filteredProducts}
+            setFilteredProducts={setFilteredProducts}
           />
         </Col>
         <Col xs={9}>
