@@ -36,7 +36,7 @@ nav {
 
 li {
   justify-content: center;
-  color: white;
+  color: red;
   list-style: none;
 }
 
@@ -74,7 +74,8 @@ input::-webkit-inner-spin-button {
 }
 
 .container {
-  margin: 50px;
+  margin-top: 50px;
+  margin-left: 25px !important;
 }
 
 .label-style {

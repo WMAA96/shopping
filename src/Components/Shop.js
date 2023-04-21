@@ -16,6 +16,7 @@ function Shop(props) {
       price: 15,
       band: "blink182",
       album: "Untitled",
+      tracks: ["The First Time", "Happy Days"],
       quantity: 1,
     },
     {
@@ -23,6 +24,7 @@ function Shop(props) {
       price: 10,
       band: "yellowcard",
       album: "ocean avenue",
+      tracks: [],
       quantity: 1,
     },
     {
@@ -30,6 +32,7 @@ function Shop(props) {
       price: 20,
       band: "Green day",
       album: "Dookie",
+      tracks: [],
       quantity: 1,
     },
     {
@@ -37,6 +40,7 @@ function Shop(props) {
       price: 20,
       band: "Green day",
       album: "Dookie",
+      tracks: [],
       quantity: 1,
     },
   ]);

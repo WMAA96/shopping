@@ -30,6 +30,7 @@ function Productcard(props) {
         <Link to={`/Shop/${product.id}`} state={product}>
           <Card.Title>{product.band}</Card.Title>
         </Link>
+        <Card.Text> {product.album} </Card.Text>
         <Card.Text> Price: £{product.price}</Card.Text>
         <div>
           <Button onClick={increment}>+</Button>
