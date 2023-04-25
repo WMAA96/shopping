@@ -8,50 +8,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function Shop(props) {
-  const { addtoCart } = props;
+  const { addtoCart, products, addProduct } = props;
   const [priceRange, setPriceRange] = useState(50);
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      price: 15,
-      band: "blink182",
-      album: "Untitled",
-      tracks: ["The First Time", "Happy Days"],
-      quantity: 1,
-    },
-    {
-      id: 2,
-      price: 10,
-      band: "yellowcard",
-      album: "ocean avenue",
-      tracks: [],
-      quantity: 1,
-    },
-    {
-      id: 3,
-      price: 20,
-      band: "Green day",
-      album: "Dookie",
-      tracks: [],
-      quantity: 1,
-    },
-    {
-      id: 4,
-      price: 20,
-      band: "Green day",
-      album: "Dookie",
-      tracks: [],
-      quantity: 1,
-    },
-  ]);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
-
-  const addProduct = (id, e, quantity) => {
-    const currentProduct = products.find(products => products.id === id);
-
-    addtoCart(currentProduct, quantity);
-  };
 
   return (
     <Container>

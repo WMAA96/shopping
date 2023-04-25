@@ -27,7 +27,7 @@ function Productcard(props) {
     <Card border="primary">
       <div className="card">
         <Card.Img /*variant="top" src="holder.js/100px180"*/ />
-        <Link to={`/Shop/${product.id}`} state={product}>
+        <Link to={`/Shop/${product.id}`}>
           <Card.Title>{product.band}</Card.Title>
         </Link>
         <Card.Text> {product.album} </Card.Text>

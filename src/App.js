@@ -10,9 +10,47 @@ import Item from "./Components/Item";
 function App() {
   const [cart, setCart] = useState([]);
 
+  const [products, setProducts] = useState([
+    {
+      id: 1,
+      price: 15,
+      band: "blink182",
+      album: "Untitled",
+      tracks: ["The First Time", "Happy Days"],
+      about:
+        "Nine is the eighth studio album by American rock band Blink-182, released on September 20, 2019, through Columbia Records, as the band's first album on the label.",
+      quantity: 1,
+    },
+    {
+      id: 2,
+      price: 10,
+      band: "yellowcard",
+      album: "ocean avenue",
+      tracks: [],
+      quantity: 1,
+    },
+    {
+      id: 3,
+      price: 20,
+      band: "Green day",
+      album: "Dookie",
+      tracks: [],
+      quantity: 1,
+    },
+    {
+      id: 4,
+      price: 20,
+      band: "Green day",
+      album: "Dookie",
+      tracks: [],
+      quantity: 1,
+    },
+  ]);
+
   useEffect(() => {}, [cart]);
 
   const addtoCart = (adding, quantity) => {
+    console.log("Adding to cart");
     console.log(adding);
 
     if (cart.includes(adding)) {
@@ -44,6 +82,12 @@ function App() {
     console.log(newCart);
   };
 
+  const addProduct = (id, e, quantity) => {
+    const currentProduct = products.find(products => products.id === id);
+
+    addtoCart(currentProduct, quantity);
+  };
+
   return (
     <div className="App">
       <HashRouter>
@@ -56,9 +100,19 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route
             path="/Shop"
-            element={<Shop cart={cart} addtoCart={addtoCart} />}
+            element={
+              <Shop
+                cart={cart}
+                products={products}
+                addProduct={addProduct}
+                addtoCart={addtoCart}
+              />
+            }
           />
-          <Route path="/Shop/:id" element={<Item />}></Route>
+          <Route
+            path="/Shop/:id"
+            element={<Item addProduct={addProduct} products={products} />}
+          ></Route>
         </Routes>
       </HashRouter>
     </div>
