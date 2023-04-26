@@ -6,46 +6,12 @@ import Shop from "./Components/Shop";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Item from "./Components/Item";
+import { stock } from "./Components/utils/Stock";
 
 function App() {
   const [cart, setCart] = useState([]);
 
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      price: 15,
-      band: "blink182",
-      album: "Untitled",
-      tracks: ["The First Time", "Happy Days"],
-      about:
-        "Nine is the eighth studio album by American rock band Blink-182, released on September 20, 2019, through Columbia Records, as the band's first album on the label.",
-      quantity: 1,
-    },
-    {
-      id: 2,
-      price: 10,
-      band: "yellowcard",
-      album: "ocean avenue",
-      tracks: [],
-      quantity: 1,
-    },
-    {
-      id: 3,
-      price: 20,
-      band: "Green day",
-      album: "Dookie",
-      tracks: [],
-      quantity: 1,
-    },
-    {
-      id: 4,
-      price: 20,
-      band: "Green day",
-      album: "Dookie",
-      tracks: [],
-      quantity: 1,
-    },
-  ]);
+  const [products, setProducts] = useState(stock);
 
   useEffect(() => {}, [cart]);
 

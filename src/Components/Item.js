@@ -36,10 +36,7 @@ function Item(props) {
         <Col lg={6}>
           <Carousel className="carousel">
             <Carousel.Item>
-              <img
-                src="https://i.scdn.co/image/ab6761610000e5eb33639aaeecfcc5ebada97476"
-                alt="Band"
-              />
+              <img src={item.bandImage} alt="Band" />
               <Carousel.Caption>
                 <h3>First slide label</h3>
                 <p>
@@ -48,10 +45,7 @@ function Item(props) {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img
-                src="https://i.scdn.co/image/ab67616d0000b273198542728b101474c4afe0a1"
-                alt="Second slide"
-              />
+              <img src={item.albumImage} alt="Second slide" />
             </Carousel.Item>
           </Carousel>
         </Col>
