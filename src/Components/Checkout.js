@@ -1,15 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import basket from "./utils/basket.png";
 
 function Checkout(props) {
   const { cart, cartQuantity, list, removeFromBasket } = props;
 
+  const handleClick = e => {
+    alert("BBB");
+  };
+
   if (!list) {
-    return <Link to="/">Checkout: {cartQuantity}</Link>;
+    return (
+      <div className="checkout">
+        <img
+          src={basket}
+          onClick={handleClick}
+          className="basket"
+          alt="Basket"
+        />
+        <div className="quantity">{cartQuantity}</div>
+      </div>
+    );
   } else if (cart.length === 0) {
     return (
       <div className="dropdwn">
-        Checkout: {cartQuantity}
+        <div className="checkout">
+          <img
+            src={basket}
+            className="basket"
+            onClick={handleClick}
+            alt="Basket"
+          />
+          <div className="quantity">{cartQuantity}</div>
+        </div>
         <div className="dropdwn-content">
           <p>Basket is empty </p>
         </div>
@@ -18,7 +41,15 @@ function Checkout(props) {
   } else {
     return (
       <div className="dropdwn">
-        Checkout: {cartQuantity}
+        <div className="checkout">
+          <img
+            src={basket}
+            onClick={handleClick}
+            className="basket"
+            alt="Basket"
+          />
+          <div className="quantity">{cartQuantity}</div>
+        </div>
         <div className="dropdwn-content">
           Your basket:
           <ul>
