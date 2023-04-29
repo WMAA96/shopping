@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import basket from "./utils/basket.png";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import BasketOffCanvas from "./BasketOffCanvas";
+
 function Checkout(props) {
-  const { cart, cartQuantity, list, removeFromBasket } = props;
+  const { cart, cartQuantity, list, removeFromBasket, setList } = props;
 
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  const handleClose = () => {
+    setShow(false);
+    setList(false);
+  };
+  const handleShow = () => {
+    setShow(true);
+    setList(false);
+  };
   const handleClick = e => {
     alert("BBB");
   };
@@ -25,29 +31,42 @@ function Checkout(props) {
         />
         <div className="quantity">{cartQuantity}</div>
       </div>
-      {list === true && cart.length === 0 ? (
-        <div className="dropdwn">
-          <div className="dropdwn-content">
-            <p>Basket is empty</p>
+
+      {!show &&
+        (list === true && cart.length === 0 ? (
+          <div className="dropdwn">
+            <div className="dropdwn-content">
+              <p>Basket is empty</p>
+            </div>
           </div>
-        </div>
-      ) : (
-        list === true &&
-        cart.length > 0 && (
-          <div className="dropdwn-content">
-            Your basket:
-            <ul>
-              {cart.map(({ id, album, quantity, price, band }) => (
-                <li key={id}>
-                  <h3>{band}</h3>
-                  {album} {quantity} £{quantity * price}{" "}
-                  <button onClick={e => removeFromBasket({ id }, e)}>X</button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )
-      )}
+        ) : (
+          list === true &&
+          cart.length > 0 && (
+            <div className="dropdwn-content">
+              Your basket:
+              <ul>
+                {cart.map(({ id, album, quantity, price, band }) => (
+                  <li key={id}>
+                    <h3>{band}</h3>
+                    {album} {quantity} £{quantity * price}{" "}
+                    <button onClick={e => removeFromBasket({ id }, e)}>
+                      X
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        ))}
+
+      <BasketOffCanvas
+        show={show}
+        onHide={handleClose}
+        cart={cart}
+        removeFromBasket={removeFromBasket}
+        setList={setList}
+        list={list}
+      />
     </>
   );
 }

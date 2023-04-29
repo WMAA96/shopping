@@ -24,6 +24,7 @@ function Nbar(props) {
           <Checkout
             cartQuantity={cartQuantity()}
             list={list}
+            setList={setList}
             cart={cart}
             removeFromBasket={removeFromBasket}
           />
