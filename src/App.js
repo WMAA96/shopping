@@ -16,9 +16,6 @@ function App() {
   useEffect(() => {}, [cart]);
 
   const addtoCart = (adding, quantity) => {
-    console.log("Adding to cart");
-    console.log(adding);
-
     if (cart.includes(adding)) {
       changeBasketQuantity(adding, quantity);
     } else {
@@ -26,6 +23,13 @@ function App() {
       setCart(oldArray => [...oldArray, adding]);
     }
   };
+
+  const totalPrice = cart.reduce((total, cart) => {
+    let current = cart.price * cart.quantity;
+    total = total + current;
+    console.log(total);
+    return total;
+  }, 0);
 
   const cartQuantity = () => {
     return cart.reduce((total, cart) => cart.quantity + total, 0);
@@ -61,6 +65,7 @@ function App() {
           cartQuantity={cartQuantity}
           cart={cart}
           removeFromBasket={removeFromBasket}
+          totalPrice={totalPrice}
         />
         <Routes>
           <Route path="/" element={<Home />} />

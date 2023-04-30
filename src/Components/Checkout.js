@@ -4,7 +4,8 @@ import basket from "./utils/basket.png";
 import BasketOffCanvas from "./BasketOffCanvas";
 
 function Checkout(props) {
-  const { cart, cartQuantity, list, removeFromBasket, setList } = props;
+  const { cart, cartQuantity, list, removeFromBasket, setList, totalPrice } =
+    props;
 
   const [show, setShow] = useState(false);
 
@@ -43,7 +44,8 @@ function Checkout(props) {
           list === true &&
           cart.length > 0 && (
             <div className="dropdwn-content">
-              Your basket:
+              <div>Total Price: £{totalPrice}</div>
+
               <ul>
                 {cart.map(({ id, album, quantity, price, band }) => (
                   <li key={id}>

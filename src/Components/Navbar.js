@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Checkout from "./Checkout";
 
 function Nbar(props) {
-  const { cart, cartQuantity, removeFromBasket } = props;
+  const { cart, cartQuantity, removeFromBasket, totalPrice } = props;
 
   const [list, setList] = useState(false);
 
@@ -27,6 +27,7 @@ function Nbar(props) {
             setList={setList}
             cart={cart}
             removeFromBasket={removeFromBasket}
+            totalPrice={totalPrice}
           />
         </li>
       </ul>
