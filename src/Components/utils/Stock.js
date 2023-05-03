@@ -25,6 +25,8 @@ export const stock = [
       "https://i.scdn.co/image/ab6761610000e5eb33639aaeecfcc5ebada97476", //640 Height 640 Width inital
     albumImage:
       "https://i.scdn.co/image/ab67616d0000b273198542728b101474c4afe0a1",
+    smAlbumImage:
+      "https://i.scdn.co/image/ab67616d00004851198542728b101474c4afe0a1",
     about:
       "Nine is the eighth studio album by American rock band Blink-182, released on September 20, 2019, through Columbia Records, as the band's first album on the label.",
     quantity: 1,

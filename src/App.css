@@ -38,6 +38,7 @@ li {
   justify-content: center;
   color: red;
   list-style: none;
+  margin: 5px;
 }
 
 .quantityLabel {
@@ -108,4 +109,17 @@ input {
   font-size: 12px;
   font-weight: bold;
   line-height: 20px;
+}
+
+.basketItems {
+  display: flex;
+  justify-content: space-between;
+}
+
+.basketImg {
+}
+
+.basketDetails {
+  width: 200px; /* set a fixed width */
+  text-align: left; /* left align the contents */
 }
