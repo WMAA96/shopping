@@ -68,6 +68,7 @@ function Checkout(props) {
         removeFromBasket={removeFromBasket}
         setList={setList}
         list={list}
+        totalPrice={totalPrice}
       />
     </>
   );

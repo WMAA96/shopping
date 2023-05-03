@@ -120,6 +120,16 @@ input {
 }
 
 .basketDetails {
-  width: 200px; /* set a fixed width */
-  text-align: left; /* left align the contents */
+  width: 200px;
+  text-align: left;
+}
+
+.basketPrice {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+
+.basketButton {
+  width: 100%;
 }

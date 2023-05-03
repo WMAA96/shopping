@@ -1,7 +1,8 @@
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
 function BasketOffCanvas(props) {
-  const { show, onHide, cart, removeFromBasket, setList, list } = props;
+  const { show, onHide, cart, removeFromBasket, setList, list, totalPrice } =
+    props;
   return (
     <Offcanvas placement="end" show={show} onHide={onHide}>
       <Offcanvas.Header closeButton>
@@ -40,6 +41,14 @@ function BasketOffCanvas(props) {
             </li>
           ))}
         </ul>
+        <div className="basketPrice">
+          <span>Total:</span>
+          <span>£{totalPrice}</span>
+        </div>
+        <hr></hr>
+        <div className="viewCheckout">
+          <Button className="basketButton">View basket & checkout</Button>
+        </div>
       </Offcanvas.Body>
     </Offcanvas>
   );
