@@ -28,7 +28,7 @@ function Shop(props) {
         <Col xs={9}>
           <Row>
             {filteredProducts.map(product => (
-              <Col xs="4" key={product.id}>
+              <Col lg="4" xs="1" key={product.id}>
                 <Productcard product={product} addProduct={addProduct} />
               </Col>
             ))}

@@ -24,32 +24,22 @@ function Productcard(props) {
   };
 
   return (
-    <Card border="primary">
-      <div className="card">
-        <Card.Img /*variant="top" src="holder.js/100px180"*/ />
-        <Link to={`/Shop/${product.id}`}>
-          <Card.Title>{product.band}</Card.Title>
-        </Link>
-        <Card.Text> {product.album} </Card.Text>
-        <Card.Text> Price: £{product.price}</Card.Text>
-        <div>
-          <Button onClick={increment}>+</Button>
-          <input
-            key={product.id}
-            type="number"
-            min="1"
-            max="99"
-            value={value}
-            onChange={handleChange}
-          />
-          <Button onClick={decrement}>-</Button>
-        </div>
-        <Button variant="dark" onClick={e => addProduct(product.id, e, value)}>
-          {" "}
-          Add to cart
-        </Button>
-      </div>
-      <br />
+    <Card>
+      <Link to={`/Shop/${product.id}`}>
+        <Card.Img
+          variant="top"
+          src={product.albumImage}
+          height="320px"
+          width="320px"
+        />
+        <Card.Title>{product.album}</Card.Title>
+      </Link>
+      <Card.Subtitle> {product.band} </Card.Subtitle>
+      <Card.Text>£{product.price}</Card.Text>
+
+      <Button variant="dark" onClick={e => addProduct(product.id, e, value)}>
+        Quick add
+      </Button>
     </Card>
   );
 }

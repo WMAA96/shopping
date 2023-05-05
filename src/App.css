@@ -3,7 +3,14 @@ body {
 }
 
 .App {
-  text-align: center;
+  height: 100vh;
+
+  background-color: rgb(245, 241, 241);
+  overflow: auto;
+}
+
+.container {
+  height: auto;
 }
 
 .home {
@@ -49,10 +56,6 @@ li {
   margin: 40px;
   display: grid;
   grid-template-columns: auto auto auto;
-}
-
-.card {
-  border: solid purple 111px;
 }
 
 .dropdwn {
@@ -132,4 +135,12 @@ input {
 
 .basketButton {
   width: 100%;
+}
+
+.card {
+  margin-bottom: 15px;
+}
+
+.card-img-top {
+  margin-bottom: 15px;
 }
