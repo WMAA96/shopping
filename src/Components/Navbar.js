@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Checkout from "./Checkout";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 function Nbar(props) {
   const { cart, cartQuantity, removeFromBasket, totalPrice } = props;
@@ -8,16 +11,16 @@ function Nbar(props) {
   const [list, setList] = useState(false);
 
   return (
-    <nav>
-      <h3>Logo</h3>
-      <ul className="navLinks">
-        <Link to="/">
-          <li>Home</li>
-        </Link>
-        <Link to="/Shop">
-          <li>Shop</li>
-        </Link>
-        <li
+    <Navbar bg="light">
+      <Container>
+        <Navbar.Brand>Logo</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          Home
+        </Navbar.Brand>
+        <Navbar.Brand as={Link} to="/shop">
+          Shop
+        </Navbar.Brand>
+        <Navbar.Brand
           onMouseEnter={() => setList(true)}
           onMouseLeave={() => setList(false)}
         >
@@ -29,9 +32,9 @@ function Nbar(props) {
             removeFromBasket={removeFromBasket}
             totalPrice={totalPrice}
           />
-        </li>
-      </ul>
-    </nav>
+        </Navbar.Brand>
+      </Container>
+    </Navbar>
   );
 }
 

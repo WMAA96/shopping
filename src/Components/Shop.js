@@ -14,7 +14,7 @@ function Shop(props) {
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   return (
-    <Container>
+    <Container id="shopContainer">
       <Row>
         <Col xs={3}>
           <Sidebar
@@ -28,7 +28,7 @@ function Shop(props) {
         <Col xs={9}>
           <Row>
             {filteredProducts.map(product => (
-              <Col lg="4" xs="1" key={product.id}>
+              <Col lg="4" sm="1" key={product.id}>
                 <Productcard product={product} addProduct={addProduct} />
               </Col>
             ))}

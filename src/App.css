@@ -4,7 +4,7 @@ body {
 
 .App {
   height: 100vh;
-
+  overflow-x: hidden;
   background-color: rgb(245, 241, 241);
   overflow: auto;
 }
@@ -21,6 +21,7 @@ body {
   background-repeat: no-repeat;
 }
 
+/** old nav?
 nav {
   display: flex;
   justify-content: space-around;
@@ -28,7 +29,6 @@ nav {
   min-height: 10vh;
   background: rgb(75, 80, 82);
   color: white;
-  overflow: hidden;
 }
 
 .navLinks {
@@ -77,8 +77,11 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.container {
+#shopContainer {
   margin-top: 50px;
+  margin-left: 250px !important;
+}
+.container {
   margin-left: 250px !important;
 }
 
@@ -112,6 +115,7 @@ input {
   font-size: 12px;
   font-weight: bold;
   line-height: 20px;
+  color: red;
 }
 
 .basketItems {
