@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom";
 import background from "./utils/background.jpg";
+import Button from "react-bootstrap/Button";
 
 function Home() {
   return (
     <div className="home" style={{ backgroundImage: `url(${background})` }}>
-      Home
+      <div className="homeText">
+        <h1>Music Shop</h1>
+        <Link to="/shop">
+          <Button variant="light">Shop Now</Button>
+        </Link>
+      </div>
     </div>
   );
 }

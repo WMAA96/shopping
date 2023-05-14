@@ -11,9 +11,9 @@ function Nbar(props) {
   const [list, setList] = useState(false);
 
   return (
-    <Navbar bg="light">
+    <Navbar bg="dark">
       <Container>
-        <Navbar.Brand>Logo</Navbar.Brand>
+        <Navbar.Brand>Music Shop</Navbar.Brand>
         <Navbar.Brand as={Link} to="/">
           Home
         </Navbar.Brand>

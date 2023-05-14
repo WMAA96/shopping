@@ -26,6 +26,7 @@ function BasketOffCanvas(props) {
                 </div>
                 <div className="basketDelete">
                   <Button
+                    variant="dark"
                     onClick={e => {
                       removeFromBasket({ id }, e);
                       setList(false);
@@ -47,7 +48,9 @@ function BasketOffCanvas(props) {
         </div>
         <hr></hr>
         <div className="viewCheckout">
-          <Button className="basketButton">View basket & checkout</Button>
+          <Button variant="dark" className="basketButton">
+            View basket & checkout
+          </Button>
         </div>
       </Offcanvas.Body>
     </Offcanvas>

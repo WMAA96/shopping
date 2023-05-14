@@ -4,9 +4,9 @@ body {
 
 .App {
   height: 100vh;
-  overflow-x: hidden;
+  overflow-x: auto; /** Note to self - Putting this to auto makes the navbar weird in diff screen sizes, but need auto otherwise content cut off */
   background-color: rgb(245, 241, 241);
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .container {
@@ -14,11 +14,18 @@ body {
 }
 
 .home {
+  display: flex;
   height: 90vh;
-  color: #008190;
+  color: white;
   background-position-x: center;
   background-size: cover;
   background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeText {
+  text-align: center;
 }
 
 /** old nav?
@@ -43,7 +50,7 @@ nav {
 
 li {
   justify-content: center;
-  color: red;
+  color: black;
   list-style: none;
   margin: 5px;
 }
@@ -64,13 +71,26 @@ li {
 
 .dropdwn-content {
   position: absolute;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  background-color: #008190;
+  background-color: grey;
   min-width: 200px;
   min-height: 200px;
   text-align: left;
   z-index: 1;
+  max-height: 450px;
+  max-width: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: solid black 2px;
 }
+
+.navbar-brand {
+  color: white !important;
+}
+
+.navbar-brand:hover {
+  background-color: blue;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -79,10 +99,8 @@ input::-webkit-inner-spin-button {
 
 #shopContainer {
   margin-top: 50px;
-  margin-left: 250px !important;
 }
 .container {
-  margin-left: 250px !important;
 }
 
 .label-style {

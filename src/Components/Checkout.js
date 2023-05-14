@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import basket from "./utils/basket.png";
 import BasketOffCanvas from "./BasketOffCanvas";
+import Button from "react-bootstrap/Button";
 
 function Checkout(props) {
   const { cart, cartQuantity, list, removeFromBasket, setList, totalPrice } =
@@ -47,15 +48,39 @@ function Checkout(props) {
               <div>Total Price: £{totalPrice}</div>
 
               <ul>
-                {cart.map(({ id, album, quantity, price, band }) => (
-                  <li key={id}>
-                    <h3>{band}</h3>
-                    {album} {quantity} £{quantity * price}{" "}
-                    <button onClick={e => removeFromBasket({ id }, e)}>
-                      X
-                    </button>
-                  </li>
-                ))}
+                {cart.map(
+                  ({ id, album, quantity, price, band, albumImage }) => (
+                    <li key={id}>
+                      <div className="basketItems">
+                        <div className="basketImg">
+                          <img src={albumImage} height="100px" alt="Album" />
+                        </div>
+                        <div className="basketDetails">
+                          <ul>
+                            <li>{album}</li>
+
+                            <li>Quantity: {quantity}</li>
+                            <li>Price: £{quantity * price}</li>
+                          </ul>
+                        </div>
+                        <div className="basketDelete">
+                          <Button
+                            variant="dark"
+                            onClick={e => {
+                              removeFromBasket({ id }, e);
+                              setList(false);
+                              console.log(list);
+                            }}
+                          >
+                            <span>X</span>
+                          </Button>
+                        </div>
+                      </div>
+
+                      <hr />
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           )
