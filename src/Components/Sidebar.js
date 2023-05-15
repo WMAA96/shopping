@@ -50,11 +50,13 @@ function Sidebar(props) {
 
   return (
     <div>
-      <Form.Label>Filter by price</Form.Label>
+      <Form.Label className="fs-3 text-dark  float-left">
+        Filter price
+      </Form.Label>
       <Form.Range value={priceRange} onChange={handlePriceChange} />
-      <div>Current max price: £{priceRange}</div>
+      <div>Max price: £{priceRange}</div>
       <hr />
-      <Form.Label className="fs-3 text-primary  float-left">Band</Form.Label>
+      <Form.Label className="fs-3 text-dark  float-left">Band</Form.Label>
       {uniqueBand.map(band => (
         <Form.Check
           key={band}

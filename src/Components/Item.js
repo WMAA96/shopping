@@ -31,7 +31,7 @@ function Item(props) {
   };
 
   return (
-    <Container>
+    <Container id="itemContainer">
       <Row>
         <Col lg={6}>
           <Carousel className="carousel">
@@ -62,8 +62,11 @@ function Item(props) {
               ))}
             </ul>
             <hr></hr>
-            <Button onClick={increment}>+</Button>
+            <button className="sqButton" onClick={increment}>
+              +
+            </button>
             <input
+              className="itemQuantityInput"
               key={item.id}
               type="number"
               min="1"
@@ -71,11 +74,16 @@ function Item(props) {
               value={value}
               onChange={handleChange}
             />
-            <Button onClick={decrement}>-</Button>
-            <Button variant="dark" onClick={e => addProduct(item.id, e, value)}>
+            <button onClick={decrement} className="sqButton">
+              -
+            </button>
+            <button
+              className="sqButton test"
+              onClick={e => addProduct(item.id, e, value)}
+            >
               {" "}
               Add to cart
-            </Button>
+            </button>
           </div>
         </Col>
       </Row>
