@@ -36,22 +36,23 @@ function Item(props) {
         <Col lg={6}>
           <Carousel className="carousel">
             <Carousel.Item>
-              <img src={item.bandImage} alt="Band" />
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
-              </Carousel.Caption>
+              <img src={item.bandImage} className="carouselImage" alt="Band" />
+              <Carousel.Caption></Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img src={item.albumImage} alt="Second slide" />
+              <img
+                src={item.albumImage}
+                className="carouselImage"
+                alt="Second slide"
+              />
             </Carousel.Item>
           </Carousel>
         </Col>
         <Col lg={6}>
           <h3>{item.band}</h3>
-          <h2>{item.album}</h2>
+          <h1>{item.album}</h1>
+
+          <h2>£{item.price}</h2>
           <p>{item.about}</p>
           <hr></hr>
           <div className="tracks">
@@ -62,28 +63,30 @@ function Item(props) {
               ))}
             </ul>
             <hr></hr>
-            <button className="sqButton" onClick={increment}>
-              +
-            </button>
-            <input
-              className="itemQuantityInput"
-              key={item.id}
-              type="number"
-              min="1"
-              max="99"
-              value={value}
-              onChange={handleChange}
-            />
-            <button onClick={decrement} className="sqButton">
-              -
-            </button>
-            <button
-              className="sqButton test"
-              onClick={e => addProduct(item.id, e, value)}
-            >
-              {" "}
-              Add to cart
-            </button>
+            <div className="itemAddToCart">
+              <button className="sqButton" onClick={increment}>
+                +
+              </button>
+              <input
+                className="itemQuantityInput"
+                key={item.id}
+                type="number"
+                min="1"
+                max="99"
+                value={value}
+                onChange={handleChange}
+              />
+              <button onClick={decrement} className="sqButton">
+                -
+              </button>
+              <button
+                className="sqButton test"
+                onClick={e => addProduct(item.id, e, value)}
+              >
+                {" "}
+                Add to cart
+              </button>
+            </div>
           </div>
         </Col>
       </Row>
