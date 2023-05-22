@@ -49,7 +49,7 @@ function BasketOffCanvas(props) {
         <hr></hr>
         <div className="viewCheckout">
           <Button variant="dark" className="basketButton">
-            View basket & checkout
+            Checkout
           </Button>
         </div>
       </Offcanvas.Body>

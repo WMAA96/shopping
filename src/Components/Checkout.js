@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import basket from "./utils/basket.png";
+import basket from "./utils/cart.png";
 import BasketOffCanvas from "./BasketOffCanvas";
 import Button from "react-bootstrap/Button";
 
@@ -45,8 +45,15 @@ function Checkout(props) {
           list === true &&
           cart.length > 0 && (
             <div className="dropdwn-content">
-              <div>Total Price: £{totalPrice}</div>
-
+              <div className="basketOverview">
+                <span className="b2">{cart.length} Items in your basket</span>
+                <span className="b2"> £{totalPrice} </span>
+                <div className="b3">
+                  <button className="sqButton" onClick={handleShow}>
+                    View Basket
+                  </button>
+                </div>
+              </div>
               <ul>
                 {cart.map(
                   ({ id, album, quantity, price, band, albumImage }) => (

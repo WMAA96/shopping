@@ -5,7 +5,7 @@ body {
 .App {
   height: 100vh;
   overflow-x: auto; /** Note to self - Putting this to auto makes the navbar weird in diff screen sizes, but need auto otherwise content cut off */
-  background-color: rgb(245, 241, 241);
+  background-color: #fcfefe;
   overflow-y: scroll;
 }
 
@@ -56,7 +56,7 @@ li {
   justify-content: center;
   color: black;
   list-style: none;
-  margin: 4px;
+  margin: 5px;
 }
 
 .quantityLabel {
@@ -75,18 +75,25 @@ li {
 
 .dropdwn-content {
   position: absolute;
-  background-color: grey;
-  min-width: 200px;
+  color: black;
+  background-color: rgb(245, 241, 241);
+  min-width: 330px;
   min-height: 200px;
   text-align: left;
   z-index: 1;
   max-height: 400px;
-  max-width: 400px;
+  max-width: 370px;
   overflow-y: scroll;
   overflow-x: hidden;
-  border: solid black 2px;
+  border: solid black 1px;
+  left: 67%;
 }
 
+@media (max-width: 1100px) {
+  .dropdwn-content {
+    display: none; /* hide the dropdown when the window width is less than 1100px */
+  }
+}
 .navbar-brand {
   color: white !important;
 }
@@ -131,7 +138,7 @@ input::-webkit-inner-spin-button {
   font-size: 12px;
   font-weight: bold;
   line-height: 20px;
-  color: red;
+  color: black;
 }
 
 .basketItems {
@@ -155,6 +162,23 @@ input::-webkit-inner-spin-button {
 
 .basketButton {
   width: 100%;
+}
+
+.b2 {
+  margin: 2%;
+}
+
+.b3 {
+  margin: 5%;
+}
+
+.basketOverview {
+  display: flex;
+  color: black;
+  background-color: #eaf6f6;
+
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 .card {
