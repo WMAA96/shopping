@@ -75,7 +75,7 @@ function Checkout(props) {
                             variant="dark"
                             onClick={e => {
                               removeFromBasket({ id }, e);
-                              setList(false);
+
                               console.log(list);
                             }}
                           >

@@ -71,14 +71,15 @@ li {
 
 .dropdwn {
   padding: 0px;
+  overflow-x: hidden;
 }
 
 .dropdwn-content {
   position: absolute;
   color: black;
   background-color: rgb(245, 241, 241);
-  min-width: 330px;
-  min-height: 200px;
+  min-width: 370px;
+  min-height: 287px;
   text-align: left;
   z-index: 1;
   max-height: 400px;
@@ -86,14 +87,9 @@ li {
   overflow-y: scroll;
   overflow-x: hidden;
   border: solid black 1px;
-  left: 67%;
+  right: 0;
 }
 
-@media (max-width: 1100px) {
-  .dropdwn-content {
-    display: none; /* hide the dropdown when the window width is less than 1100px */
-  }
-}
 .navbar-brand {
   color: white !important;
 }
@@ -187,6 +183,8 @@ input::-webkit-inner-spin-button {
 
 .card-img-top {
   margin-bottom: 15px;
+  width: 100%;
+  height: auto;
 }
 
 .sqButton {

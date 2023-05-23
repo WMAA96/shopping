@@ -16,7 +16,7 @@ function Shop(props) {
   return (
     <Container id="shopContainer">
       <Row>
-        <Col xs={3}>
+        <Col>
           <Sidebar
             priceRange={priceRange}
             setPriceRange={setPriceRange}
@@ -25,10 +25,10 @@ function Shop(props) {
             setFilteredProducts={setFilteredProducts}
           />
         </Col>
-        <Col xs={9}>
+        <Col lg={10}>
           <Row>
             {filteredProducts.map(product => (
-              <Col lg="4" key={product.id}>
+              <Col lg="3" md="6" sm="6" xs="9" key={product.id}>
                 <Productcard product={product} addProduct={addProduct} />
               </Col>
             ))}

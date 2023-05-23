@@ -26,12 +26,7 @@ function Productcard(props) {
   return (
     <Card>
       <Link to={`/Shop/${product.id}`}>
-        <Card.Img
-          variant="top"
-          src={product.albumImage}
-          height="320px"
-          width="320px"
-        />
+        <Card.Img variant="top" src={product.albumImage} />
         <Card.Title>{product.album}</Card.Title>
       </Link>
       <Card.Subtitle> {product.band} </Card.Subtitle>

@@ -65,6 +65,7 @@ function Sidebar(props) {
           onChange={e => handleCheckBox(e, band)}
         />
       ))}
+      <hr />
     </div>
   );
 }
