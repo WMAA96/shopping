@@ -35,7 +35,7 @@ export const stock = [
     id: 2,
     price: 10,
     band: "yellowcard",
-    album: "ocean avenue",
+    album: "Ocean avenue",
     tracks: [
       "Way Away : 3:23",
       "Breathing : 3:38",
@@ -59,7 +59,7 @@ export const stock = [
   },
   {
     id: 3,
-    price: 20,
+    price: 21,
     band: "Green day",
     album: "Dookie",
     tracks: [
