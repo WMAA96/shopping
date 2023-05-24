@@ -18,6 +18,7 @@ function BasketOffCanvas(props) {
                 </div>
                 <div className="basketDetails">
                   <ul>
+                    <li>{band}</li>
                     <li>{album}</li>
 
                     <li>Quantity: {quantity}</li>
