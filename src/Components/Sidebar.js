@@ -45,7 +45,9 @@ function Sidebar(props) {
   };
 
   const handlePriceChange = e => {
-    setPriceRange(e.target.value);
+    Math.ceil(e.target.value / 4) <= 5
+      ? setPriceRange(5)
+      : setPriceRange(Math.ceil(e.target.value / 4));
   };
 
   return (
@@ -53,7 +55,10 @@ function Sidebar(props) {
       <Form.Label className="fs-3 text-dark  float-left">
         Filter price
       </Form.Label>
-      <Form.Range value={priceRange} onChange={handlePriceChange} />
+      <Form.Range
+        value={Math.ceil(priceRange * 4)}
+        onChange={handlePriceChange}
+      />
       <div>Max price: £{priceRange}</div>
       <hr />
       <Form.Label className="fs-3 text-dark  float-left">Band</Form.Label>

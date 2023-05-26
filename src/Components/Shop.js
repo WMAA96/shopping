@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col";
 
 function Shop(props) {
   const { addtoCart, products, addProduct } = props;
-  const [priceRange, setPriceRange] = useState(50);
+  const [priceRange, setPriceRange] = useState(25);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
 
