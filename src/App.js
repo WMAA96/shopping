@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
-import Navbar from "./Components/Navbar";
+import Nbar from "./Components/Nbar";
 import Home from "./Components/Home";
 import Shop from "./Components/Shop";
 import "./App.css";
@@ -60,7 +60,7 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
-        <Navbar
+        <Nbar
           cartQuantity={cartQuantity}
           cart={cart}
           removeFromBasket={removeFromBasket}
