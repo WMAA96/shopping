@@ -1,28 +1,40 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Carousel from "react-bootstrap/Carousel";
-import Button from "react-bootstrap/Button";
 import { useParams } from "react-router-dom";
+import Spinner from "react-bootstrap/Spinner";
 
 function Item(props) {
   const { addProduct, products } = props;
+
+  const [adding, setAdding] = useState(false);
 
   const { id } = useParams();
   const item = products.find(product => product.id === parseInt(id));
 
   const [value, setValue] = useState(1);
 
+  const handleClick = e => {
+    setAdding(true);
+
+    setTimeout(() => {
+      setAdding(false);
+      addProduct(item.id, e, value);
+    }, 250);
+  };
+
   const increment = e => {
-    // change console log to CSS change on input
-    value >= 99 ? console.log("nope") : setValue(value + 1);
+    if (value < 99) {
+      setValue(value + 1);
+    }
   };
 
   const decrement = e => {
-    // change console log to CSS change on input
-    value <= 1 ? console.log("nope") : setValue(value - 1);
+    if (value > 1) {
+      setValue(value - 1);
+    }
   };
 
   const handleChange = e => {
@@ -63,7 +75,7 @@ function Item(props) {
               ))}
             </ul>
             <hr></hr>
-            <div className="itemAddToCart">
+            <div className="itemAddToCartArea">
               <button className="sqButton" onClick={increment}>
                 +
               </button>
@@ -80,11 +92,17 @@ function Item(props) {
                 -
               </button>
               <button
-                className="sqButton test"
-                onClick={e => addProduct(item.id, e, value)}
+                className="sqButton itemAddToCartButton"
+                onClick={handleClick}
+                disabled={adding}
               >
-                {" "}
-                Add to cart
+                {adding ? (
+                  <Spinner animation="border" role="status" size="sm">
+                    <span className="visually-hidden"></span>
+                  </Spinner>
+                ) : (
+                  "Add to cart"
+                )}
               </button>
             </div>
           </div>

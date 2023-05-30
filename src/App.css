@@ -4,7 +4,7 @@ body {
 
 .App {
   height: 100vh;
-  overflow-x: auto; /** Note to self - Putting this to auto makes the navbar weird in diff screen sizes, but need auto otherwise content cut off */
+  overflow-x: auto;
   background-color: #fcfefe;
   overflow-y: scroll;
 }
@@ -31,26 +31,6 @@ body {
 .homeText {
   text-align: center;
 }
-
-/** old nav?
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  background: rgb(75, 80, 82);
-  color: white;
-}
-
-.navLinks {
-  width: 50%;
-  justify-content: space-around;
-  display: flex;
-  align-items: center;
-}
-
-/* This may confuse me later..... 
-*/
 
 li {
   justify-content: center;
@@ -206,7 +186,8 @@ input::-webkit-inner-spin-button {
   border: solid black 1px;
 }
 
-.test {
+.itemAddToCartButton {
+  min-width: 20%;
   margin-left: 5%;
 }
 
@@ -214,6 +195,6 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 
-.itemAddToCart {
+.itemAddToCartArea {
   text-align: center;
 }
