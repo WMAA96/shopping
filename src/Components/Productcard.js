@@ -8,29 +8,12 @@ function Productcard(props) {
   const { product, addProduct } = props;
   const [adding, setAdding] = useState(false);
 
-  const [value, setValue] = useState(1);
-
-  const handleChange = e => {
-    const value = Math.max(1, Math.min(99, Number(e.target.value)));
-    setValue(value);
-  };
-
-  const increment = e => {
-    // change console log to CSS change on input
-    value >= 99 ? console.log("nope") : setValue(value + 1);
-  };
-
-  const decrement = e => {
-    // change console log to CSS change on input
-    value <= 1 ? console.log("nope") : setValue(value - 1);
-  };
-
   const handleClick = e => {
     setAdding(true);
 
     setTimeout(() => {
       setAdding(false);
-      addProduct(product.id, e, value);
+      addProduct(product.id, e, 1);
     }, 250);
   };
 

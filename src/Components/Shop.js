@@ -1,14 +1,12 @@
-import { useState, useEffect } from "react";
-import Card from "./Productcard";
+import { useState } from "react";
 import Productcard from "./Productcard";
 import Sidebar from "./Sidebar";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function Shop(props) {
-  const { addtoCart, products, addProduct } = props;
+  const { products, addProduct } = props;
   const [priceRange, setPriceRange] = useState(25);
 
   const [filteredProducts, setFilteredProducts] = useState(products);

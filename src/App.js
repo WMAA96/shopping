@@ -15,6 +15,13 @@ function App() {
 
   useEffect(() => {}, [cart]);
 
+  const addProduct = (id, e, quantity) => {
+    const currentProduct = products.find(products => products.id === id);
+
+    addtoCart(currentProduct, quantity);
+  };
+
+  //Receives product, checks to see if item is already in cart, if so change quantity, else add it to cart
   const addtoCart = (adding, quantity) => {
     if (cart.includes(adding)) {
       changeBasketQuantity(adding, quantity);
@@ -27,7 +34,6 @@ function App() {
   const totalPrice = cart.reduce((total, cart) => {
     let current = cart.price * cart.quantity;
     total = total + current;
-    console.log(total);
     return total;
   }, 0);
 
@@ -49,13 +55,6 @@ function App() {
     const newCart = cart.filter(cart => cart.id !== removeID.id);
 
     setCart(newCart);
-    console.log(newCart);
-  };
-
-  const addProduct = (id, e, quantity) => {
-    const currentProduct = products.find(products => products.id === id);
-
-    addtoCart(currentProduct, quantity);
   };
 
   return (

@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Checkout from "./Checkout";
 import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 function Nbar(props) {
@@ -13,7 +12,7 @@ function Nbar(props) {
   return (
     <Navbar bg="dark">
       <Container>
-        <Navbar.Brand>Music Shop</Navbar.Brand>
+        <Navbar.Brand>Album Shop</Navbar.Brand>
         <Navbar.Brand as={Link} to="/">
           Home
         </Navbar.Brand>

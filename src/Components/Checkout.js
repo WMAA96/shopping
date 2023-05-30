@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import basket from "./utils/cart.png";
 import BasketOffCanvas from "./BasketOffCanvas";
 import Button from "react-bootstrap/Button";
@@ -17,9 +16,6 @@ function Checkout(props) {
   const handleShow = () => {
     setShow(true);
     setList(false);
-  };
-  const handleClick = e => {
-    alert("BBB");
   };
 
   return (
@@ -46,8 +42,10 @@ function Checkout(props) {
           cart.length > 0 && (
             <div className="dropdwn-content">
               <div className="basketOverview">
-                <span className="b2">{cart.length} Items in your basket</span>
-                <span className="b2"> £{totalPrice} </span>
+                <span className="basketTop">
+                  {cart.length} Items in your basket
+                </span>
+                <span className="basketTop"> £{totalPrice} </span>
                 <div className="b3">
                   <button className="sqButton" onClick={handleShow}>
                     View Basket
@@ -75,8 +73,6 @@ function Checkout(props) {
                             variant="dark"
                             onClick={e => {
                               removeFromBasket({ id }, e);
-
-                              console.log(list);
                             }}
                           >
                             <span>X</span>

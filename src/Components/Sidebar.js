@@ -6,7 +6,6 @@ function Sidebar(props) {
     priceRange,
     setPriceRange,
     products,
-
     setFilteredProducts,
     filteredProducts,
   } = props;
@@ -19,7 +18,7 @@ function Sidebar(props) {
       return checked;
     }, {})
   );
-  // Applies price and band filter -- can seperate into 2 different useEffects later!                              @@@@@@@@@@@@@@@@@@@
+  // Applies price and band filter
   useEffect(() => {
     const bandFilter = products.filter(product => {
       if (Object.values(selectedBands).every(value => !value)) {
@@ -32,7 +31,6 @@ function Sidebar(props) {
     const priceAndBandFilter = bandFilter.filter(
       products => products.price <= priceRange
     );
-    console.log(priceRange);
 
     setFilteredProducts(priceAndBandFilter);
   }, [selectedBands, priceRange]);

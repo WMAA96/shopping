@@ -268,7 +268,7 @@ export const stock = [
   },
   {
     id: 10,
-    price: 22,
+    price: 5,
     band: "Fleetwood Mac",
     album: "Rumours",
     tracks: [

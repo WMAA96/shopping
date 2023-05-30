@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="home" style={{ backgroundImage: `url(${background})` }}>
       <div className="homeText">
-        <h1>Music Shop</h1>
+        <h1>Album Shop</h1>
         <Link to="/shop">
           <Button variant="light">Shop Now</Button>
         </Link>
